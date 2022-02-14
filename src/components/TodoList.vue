@@ -1,3 +1,8 @@
+<script setup>
+import TodoItem from "@/components/TodoItem.vue";
+
+</script>
+
 <template>
-  <h1>Hello</h1>
+  <TodoItem />
 </template>
