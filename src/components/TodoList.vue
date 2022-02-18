@@ -34,8 +34,8 @@ export default {
 
 <template>
   <!-- <TodoItem /> -->
-  <li v-for="item in todos" :key="item.name">
-    {{ item.name }}
+  <li v-for="(item, index) in todos" :key="index">
+    <span :class="{ isDone: item.done }">{{ item.name }}</span>
     <input type="checkbox" v-model="item.done" />
     <button @click="removeTodo">X</button>
   </li>
@@ -43,3 +43,9 @@ export default {
   <input v-model="currentTodo" type="text" placeholder="Buy milk" />
   <button @click="addTodo">Add Task</button>
 </template>
+
+<style scoped>
+.isDone {
+  text-decoration: line-through;
+}
+</style>
